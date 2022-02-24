@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:01:48 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/23 16:56:06 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:09:28 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <stdlib.h>
 #include <curl/curl.h>
 #include <unistd.h>
+#include <string.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	CURL		*curl;
 	CURLcode	res;
@@ -26,7 +27,10 @@ int	main(void)
 		fprintf(stderr, "[-] Failed Initializing Curl\n");
 		exit(-1);
 	}
-	curl_easy_setopt(curl, CURLOPT_URL, "localhost:8000/6");
+	char s_url[100] = "https://www.mercadobitcoin.net/api/";
+	strcat(s_url, argv[1]);
+	strcat(s_url, "/ticker");
+	curl_easy_setopt(curl, CURLOPT_URL, s_url);
 	res = curl_easy_perform(curl);
 	if (res != CURLE_OK)
 	{
