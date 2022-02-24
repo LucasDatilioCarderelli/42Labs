@@ -1,5 +1,14 @@
+# Local settings
 .vscode
-LOG.log
+
+# Logs files
+*log
+
+# Object files
 *.o
+
+# Libraries
 *.a
-a.out
+
+# Executables
+*.out
