@@ -7,7 +7,7 @@
 # Object files
 *.o
 
-# Libraries
+# Static Libraries
 *.a
 
 # Executables
