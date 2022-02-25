@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 11:49:02 by ldatilio          #+#    #+#              #
-#    Updated: 2022/02/24 18:37:09 by ldatilio         ###   ########.fr        #
+#    Updated: 2022/02/25 13:28:14 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,73 +15,74 @@ RED			=	\033[0;31m
 RESET		=	\033[0m
 
 CC			=	gcc
+CFLAG		=	-Wall -Wextra -Werror
+LIB			=	-lcurl
+
+RM 			=	rm -f
 
 MONGOOSE	=	mongoose/mongoose.a
 GNL 		=	get_next_line/get_next_line.a
 
-all:			$(MONGOOSE) $(GNL)
-				@echo "$(GREEN)"
-				@echo "██╗ ██╗ ██████╗ ██╗         ██╗     ███████╗ "
-				@echo "██║ ██║     ██║ ██║        ████╗    ██    ██╗"
-				@echo "██████║ ██████║ ██║      ██    ██╗  ██████╔═╝"
-				@echo "    ██║ ██╔═══╝ ██║      ████████║  ██    ██╗"
-				@echo "    ██║ ██████╗ ███████╗ ██║   ██║  ███████╔╝"
-				@echo "    ╚═╝ ╚═════╝ ╚══════╝ ╚═╝   ╚═╝  ╚══════╝ "
-				@echo "           Everything is Done!$(RESET)"
+SERVER 		=	api_server
+CLI 		=	get_log
+
+SERVER_DIR	=	./server/
+CLI_DIR		=	./cli/
+
+SERVER_SRC	=	$(addprefix $(SERVER_DIR),	\
+				ft_curl.c 					\
+				log_message.c 				\
+				server.c 					\
+				)
+CLI_SRC		=	$(addprefix $(CLI_DIR),	\
+				cli.c 					\
+				)
+
+SERVER_OBJ	=	$(SERVER_SRC:%.c=%.o)
+CLI_OBJ		=	$(CLI_SRC:%.c=%.o)
+
+%.o: 			%.c
+				$(CC) -c $< -o $@
+
+all:			$(MONGOOSE) $(GNL) $(SERVER) $(CLI)
+				@echo "$(GREEN)                                          "
+				@echo "                                   ║ ║            "
+				@echo "██╗ ██╗ ██████╗ ██╗       ███╗   ██████╗  ██████╗ "
+				@echo "██║ ██║     ██║ ██║      █████╗  ██║ ║██╗ ██╔═══╝ "
+				@echo "██████║ ██████║ ██║     ██   ██╗ █████╔═╝ ██████╗ "
+				@echo "    ██║ ██╔═══╝ ██║     ███████║ ██║ ║██╗     ██║ "
+				@echo "    ██║ ██████╗ ██████╗ ██║  ██║ ██████╔╝ ██████║ "
+				@echo "    ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═║═║═╝  ╚═════╝ "
+				@echo "               Everything is Done!        $(RESET)"
 
 $(MONGOOSE):
+				@echo "\n $(GREEN) Creating $(MONGOOSE) $(RESET)\n"
 				make -C ./mongoose/
-				@echo "\n $(GREEN)$(MONGOOSE) was created $(RESET)\n"
 
 $(GNL):
+				@echo "\n $(GREEN) Creating $(GNL) $(RESET)\n"
 				make -C ./get_next_line/
-				@echo "\n $(GREEN)$(MONGOOSE) was created $(RESET)\n"
+
+$(SERVER):		$(SERVER_OBJ)
+				$(CC) $(CFLAG) -o $(SERVER) $(SERVER_OBJ) $(MONGOOSE) $(LIB)
+				@echo "\n $(GREEN) $(SERVER) was created $(RESET)\n"
+
+$(CLI):			$(CLI_OBJ)
+				$(CC) $(CFLAG) -o $(CLI) $(CLI_OBJ) $(GNL) $(LIB)
+				@echo "\n $(GREEN) $(CLI) was created $(RESET)\n"
 
 clean:
 				@echo "\n $(RED) Removing *.o files $(RESET)\n"
-				rm -f $(OBJS) $(OBJS_BONUS)
+				$(RM) $(SERVER_OBJ) $(CLI_OBJ)
 				make clean -C ./mongoose
 				make clean -C ./get_next_line
 
 fclean:			clean
 				@echo "\n $(RED) Removing files *.o and *.a files $(RESET)\n"
-				rm -f $(NAME) $(NAME_BONUS)
+				$(RM) $(SERVER) $(CLI)
 				make fclean -C ./mongoose
 				make fclean -C ./get_next_line
 
 re:				fclean all
 
-.PHONY: 		all, clean, fclean, re
-
-
-
-
-
-
-# NAME 		= API
-
-# SRC 		= ./src/main.c ./src/mongoose.c
-
-# OBJS 		= $(SRC:.c=.o)
-
-# all: 		$(NAME)
-
-# $(NAME):	$(OBJS)
-#     		gcc $(OBJS) -o $(NAME)
-#     		@echo "\n$(NAME): $(GREEN)$(NAME) was created $(RESET)\n"
-
-# %.o:		%.c
-# 			gcc $(CFLAG) -c $< -o $@
-# 			@echo "\n\n$(NAME): $(GREEN)object files were created$(RESET)\n"
-
-# clean:
-# 			rm -f $(OBJS)
-# 			@echo "$(NAME): $(RED)object files were deleted$(RESET)\n"
-
-# fclean:		clean
-# 			rm -f $(NAME)
-# 			@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)\n"
-
-# re: 		fclean all
-
-# .PHONY: 	clean fclean re all
+.PHONY: 		all, clean, fclean, re, server
