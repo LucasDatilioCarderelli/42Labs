@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:32:01 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/25 16:36:15 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/25 20:45:34 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ typedef struct s_get
 	int	root;
 	int	btc;
 	int	eth;
+	int	bat;
+	int	gods;
 }	t_get;
 
 typedef struct s_data
 {
 	t_get	get;
+	int		error;
 }	t_data;
 
 #endif
