@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:48:59 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 12:38:27 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/26 18:15:21 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 
 	mg_log_set("3");
 	mg_mgr_init(&mgr);
-	mg_http_listen(&mgr, "http://localhost:8000", fn, &mgr);
+	mg_http_listen(&mgr, LOCAL_HOST, fn, &mgr);
 	while (1)
 		mg_mgr_poll(&mgr, 2000);
 	mg_mgr_free(&mgr);
