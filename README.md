@@ -1,13 +1,14 @@
 <div align="center">
 
 ```bash
-                                   ║ ║           
-██╗ ██╗ ██████╗ ██╗       ███╗   ██████╗  ██████╗
-██║ ██║     ██║ ██║      █████╗  ██║ ║██╗ ██╔═══╝
-██████║ ██████║ ██║     ██   ██╗ █████╔═╝ ██████╗
-    ██║ ██╔═══╝ ██║     ███████║ ██║ ║██╗     ██║
-    ██║ ██████╗ ██████╗ ██║  ██║ ██████╔╝ ██████║
-    ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═║═║═╝  ╚═════╝
+╔═══════════════════════════════════║═║═══════════╗
+║██╗ ██╗ ██████╗ ██╗       ███╗   ██████╗  ██████╗║
+║██║ ██║     ██║ ██║      █████╗  ██║ ║██╗ ██╔═══╝║
+║██████║ ██████║ ██║     ██   ██╗ █████╔═╝ ██████╗║
+║    ██║ ██╔═══╝ ██║     ███████║ ██║ ║██╗     ██║║
+║    ██║ ██████╗ ██████╗ ██║  ██║ ██████╔╝ ██████║║
+║    ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═║═║═╝  ╚═════╝║
+╚═════════════════════════════════════════════════╝
 ```
 
 Project develop for <a href="https://www.42sp.org.br/"> <img src="https://github.com/LucasDatilioCarderelli/42Cursus/blob/master/img/42-saopaulo.png" height=50> </a>
@@ -23,6 +24,24 @@ Project develop for <a href="https://www.42sp.org.br/"> <img src="https://github
 	</a>
 	<br>
 </p>
+
+## Description
+This is a **C** project for build a **API** server that returns some infos of **Cryptocurrency** like Bitcoin, Etherium and [GODS](https://godsunchained.com/) requesting from [*Mercado Bitcoin*](https://www.mercadobitcoin.com.br/), a brazillian exchange with a public api. To see the documentation click [**here**](https://www.mercadobitcoin.com.br/api-doc/), to see others publics API's check this [repository](https://github.com/public-apis/public-apis).
+
+## Prerequisites
+
+### ``mongoose``
+* [respository](https://github.com/cesanta/mongoose)
+* [documentation](https://mongoose.ws/documentation/#user-guide)
+> Used for create a server in localhost:8000.
+
+### ``get_next_line``
+* [repository](https://github.com/LucasDatilioCarderelli/01-Get_next_line)
+> Used for parse the log file in cli
+
+### ``libcurl``
+* [documantation](https://curl.se/libcurl/c/libcurl.html)
+> Used for request a external api and this local api.
 
 ## How to Execute
 
