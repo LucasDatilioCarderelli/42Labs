@@ -6,33 +6,14 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 07:50:36 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/25 09:11:55 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/25 20:33:00 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 
-static size_t	write_memory_call_back(void *contents, size_t size,
-										size_t nmemb, void *userp)
-{
-	size_t			realsize;
-	t_MemoryStruct	*mem;
-	char			*ptr;
-
-	realsize = size * nmemb;
-	mem = (t_MemoryStruct *)userp;
-	ptr = realloc(mem->memory, mem->size + realsize + 1);
-	if (!ptr)
-	{
-		printf("not enough memory (realloc returned NULL)\n");
-		return (0);
-	}
-	mem->memory = ptr;
-	memcpy(&(mem->memory[mem->size]), contents, realsize);
-	mem->size += realsize;
-	mem->memory[mem->size] = 0;
-	return (realsize);
-}
+static size_t
+write_memory_call_back(void *contents, size_t size, size_t nmemb, void *userp);
 
 char	*ft_curl(char *coin)
 {
@@ -61,4 +42,26 @@ char	*ft_curl(char *coin)
 	}
 	curl_easy_cleanup(curl);
 	return (chunk.memory);
+}
+
+static size_t	write_memory_call_back(
+	void *contents, size_t size, size_t nmemb, void *userp)
+{
+	size_t			realsize;
+	t_MemoryStruct	*mem;
+	char			*ptr;
+
+	realsize = size * nmemb;
+	mem = (t_MemoryStruct *)userp;
+	ptr = realloc(mem->memory, mem->size + realsize + 1);
+	if (!ptr)
+	{
+		printf("not enough memory (realloc returned NULL)\n");
+		return (0);
+	}
+	mem->memory = ptr;
+	memcpy(&(mem->memory[mem->size]), contents, realsize);
+	mem->size += realsize;
+	mem->memory[mem->size] = 0;
+	return (realsize);
 }
