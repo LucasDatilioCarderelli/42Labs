@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 11:49:02 by ldatilio          #+#    #+#              #
-#    Updated: 2022/02/25 13:28:14 by ldatilio         ###   ########.fr        #
+#    Updated: 2022/02/26 17:09:16 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SERVER_SRC	=	$(addprefix $(SERVER_DIR),	\
 				)
 CLI_SRC		=	$(addprefix $(CLI_DIR),	\
 				cli.c 					\
+				show_log.c				\
 				)
 
 SERVER_OBJ	=	$(SERVER_SRC:%.c=%.o)
