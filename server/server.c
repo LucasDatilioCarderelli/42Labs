@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:48:59 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/25 20:30:44 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/26 12:38:27 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	fn(struct mg_connection *c, int ev, void *ev_data, void *fn_data)
 			change_route(c, hm, "GODS");
 		else
 		{
-			mg_http_reply(c, 404, NULL, "Page Not found, try BTC or ETH\r\n");
+			mg_http_reply(c, 404, NULL, "{\"message\":\"Page not Found\"}");
 			log_message(LOG_FILE, hm->message.ptr, 404);
 		}
 	}
