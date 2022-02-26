@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 13:01:48 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/24 17:09:28 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/25 20:35:34 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 {
 	CURL		*curl;
 	CURLcode	res;
+	char		s_url[100];
 
 	curl = curl_easy_init();
 	if (!curl)
@@ -27,7 +28,7 @@ int	main(int argc, char **argv)
 		fprintf(stderr, "[-] Failed Initializing Curl\n");
 		exit(-1);
 	}
-	char s_url[100] = "https://www.mercadobitcoin.net/api/";
+	strcpy(s_url, "https://www.mercadobitcoin.net/api/");
 	strcat(s_url, argv[1]);
 	strcat(s_url, "/ticker");
 	curl_easy_setopt(curl, CURLOPT_URL, s_url);

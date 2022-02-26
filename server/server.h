@@ -6,14 +6,14 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 07:48:43 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/25 10:05:31 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:40:54 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVER_H
 # define SERVER_H
 
-# include "/home/ldatilio/42Labs/mongoose/mongoose.h"
+# include "../mongoose/mongoose.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <curl/curl.h>
