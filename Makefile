@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 11:49:02 by ldatilio          #+#    #+#              #
-#    Updated: 2022/02/27 12:44:21 by ldatilio         ###   ########.fr        #
+#    Updated: 2022/02/27 20:20:17 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RED			=	\033[0;31m
 RESET		=	\033[0m
 
 CC			=	gcc
-CFLAG		=	-Wall -Wextra -Werror
+CFLAG		=	-Wall -Wextra -Werror -fsanitize=leak
 LIB			=	-lcurl
 
 RM 			=	rm -f
