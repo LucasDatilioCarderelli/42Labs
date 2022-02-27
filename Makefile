@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 11:49:02 by ldatilio          #+#    #+#              #
-#    Updated: 2022/02/27 10:39:26 by ldatilio         ###   ########.fr        #
+#    Updated: 2022/02/27 12:44:21 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,13 @@ LIB			=	-lcurl
 
 RM 			=	rm -f
 
-MONGOOSE	=	mongoose/mongoose.a
-GNL 		=	get_next_line/get_next_line.a
+MONGOOSE	=	./libs/mongoose/mongoose.a
+GNL 		=	./libs/get_next_line/get_next_line.a
 
 SERVER 		=	run_api
 CLI 		=	my_cli
 
+LIBS_DIR	=	./libs
 SERVER_DIR	=	./server/
 CLI_DIR		=	./cli/
 
@@ -58,11 +59,11 @@ all:			$(MONGOOSE) $(GNL) $(SERVER) $(CLI)
 
 $(MONGOOSE):
 				@echo "\n $(GREEN) Creating $(MONGOOSE) $(RESET)\n"
-				make -C ./mongoose/
+				make -C $(LIBS_DIR)/mongoose/
 
 $(GNL):
 				@echo "\n $(GREEN) Creating $(GNL) $(RESET)\n"
-				make -C ./get_next_line/
+				make -C $(LIBS_DIR)/get_next_line/
 
 $(SERVER):		$(SERVER_OBJ)
 				$(CC) $(CFLAG) -o $(SERVER) $(SERVER_OBJ) $(MONGOOSE) $(LIB)
@@ -75,14 +76,14 @@ $(CLI):			$(CLI_OBJ)
 clean:
 				@echo "\n $(RED) Removing *.o files $(RESET)\n"
 				$(RM) $(SERVER_OBJ) $(CLI_OBJ)
-				make clean -C ./mongoose
-				make clean -C ./get_next_line
+				make clean -C $(LIBS_DIR)/mongoose
+				make clean -C $(LIBS_DIR)/get_next_line
 
 fclean:			clean
 				@echo "\n $(RED) Removing files *.o and *.a files $(RESET)\n"
 				$(RM) $(SERVER) $(CLI)
-				make fclean -C ./mongoose
-				make fclean -C ./get_next_line
+				make fclean -C $(LIBS_DIR)/mongoose
+				make fclean -C $(LIBS_DIR)/get_next_line
 
 re:				fclean all
 

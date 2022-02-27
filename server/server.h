@@ -6,14 +6,14 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 07:48:43 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 22:58:10 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/27 12:37:47 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVER_H
 # define SERVER_H
 
-# include "../mongoose/mongoose.h"
+# include "../libs/mongoose/mongoose.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <curl/curl.h>
@@ -65,7 +65,7 @@ char
 /**
  * @brief	Download data into a chunk of memory instead of storing it in a file
  *
- * @param	contents	
+ * @param	contents
  * @param	size		Size of array.
  * @param	nmemb		Size of memory of n bytes.
  * @param	userp

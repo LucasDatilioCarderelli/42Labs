@@ -6,14 +6,14 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:32:01 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/27 12:19:32 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/27 12:38:17 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLI_H
 # define CLI_H
 
-# include "../get_next_line/get_next_line.h"
+# include "../libs/get_next_line/get_next_line.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <string.h>
