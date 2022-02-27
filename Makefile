@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 11:49:02 by ldatilio          #+#    #+#              #
-#    Updated: 2022/02/26 17:09:16 by ldatilio         ###   ########.fr        #
+#    Updated: 2022/02/27 10:39:26 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ RM 			=	rm -f
 MONGOOSE	=	mongoose/mongoose.a
 GNL 		=	get_next_line/get_next_line.a
 
-SERVER 		=	api_server
-CLI 		=	get_log
+SERVER 		=	run_api
+CLI 		=	my_cli
 
 SERVER_DIR	=	./server/
 CLI_DIR		=	./cli/

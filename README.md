@@ -51,23 +51,26 @@ $> make all
 > Compile all objects and executables.
 
 ```bash
-$> ./api_server
+$> ./run_api
 ```
 > Execute the API server in the terminal.
 
 ```bash
-$> ./get_log
+$> ./my_cly
 ```
 > Show the summary of the Log file.
 
 ## How to test the CLI
 
 ```bash
-$> ./get_log
+$> ./my_cli
+
 Options avaliable:
- version
- endpoints
- show%
+║
+╠══ version:    Show Mongoose Version.
+╠══ endpoints:  List all coins supported.
+╚══ show:       Show the log's summary.
+
 ```
 
 ## Endpoints
