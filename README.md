@@ -60,6 +60,16 @@ $> ./get_log
 ```
 > Show the summary of the Log file.
 
+## How to test the CLI
+
+```bash
+$> ./get_log
+Options avaliable:
+ version
+ endpoints
+ show%
+```
+
 ## Endpoints
 
 <span style="color:green"> **[GET] /** <br></span>
