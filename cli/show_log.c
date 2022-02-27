@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 17:00:22 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/27 12:21:10 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/27 14:46:57 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	count_requests(t_data *method, int fd)
 			method->get.gods++;
 		if (strstr(tmp_line, "Status: 404"))
 			method->error++;
+		free(tmp_line);
 	}
 }
 
