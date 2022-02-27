@@ -1,9 +1,6 @@
 # Local settings
 .vscode
 
-# Logs files
-*log
-
 # Object files
 *.o
 
