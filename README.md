@@ -28,6 +28,14 @@ Project development for <a href="https://www.42sp.org.br/"> <img src="https://gi
 ## Description
 This is a **C** project for building an **API** server that returns some infos of **Cryptocurrency** like Bitcoin, Etherium and [GODS](https://godsunchained.com/) requesting from [*Mercado Bitcoin*](https://www.mercadobitcoin.com.br/), a Brazilian exchange with a public API. To see the documentation click [**here**](https://www.mercadobitcoin.com.br/api-doc/), to see other public APIs check this [repository](https://github.com/public-apis/public-apis).
 
+## Topics
+
+* [Prerequisites](#prerequisites)
+* [How to Execute](#how-to-execute)
+* [How to test the CLI](#how-to-test-the-cli)
+* [API Requests](#api-requests)
+* [License](#license)
+
 ## Prerequisites
 
 ### ``mongoose``
@@ -45,23 +53,21 @@ This is a **C** project for building an **API** server that returns some infos o
 
 ## How to Execute
 
+To run this project is recommendable to execute the Makefile to create the API server and the CLI binaries.
 ```bash
 $> make all
 ```
 > Compile all objects and executables.
 
+To run the server, execute the program below.
 ```bash
 $> ./run_api
 ```
-> Execute the API server in the terminal.
-
-```bash
-$> ./my_cly
-```
-> Show the summary of the Log file.
+> Executes the API server in the terminal.
 
 ## How to test the CLI
 
+Execute the command below to see some information and analytics data of the project.
 ```bash
 $> ./my_cli
 
@@ -73,13 +79,47 @@ Options avaliable:
 
 ```
 
-## Endpoints
+Exemple:
+```bash
+$> ./my_cli show
+
+╔══════════════╦═══════════════╦═══════════════╗
+║Total Requests║  HTTP Method  ║      Path     ║
+╠══════════════╬═══════════════╬═══════════════╣
+║      17      ║      GET      ║      /        ║
+║      36      ║      GET      ║      /BTC     ║
+║      03      ║      GET      ║      /GODS    ║
+║      54      ║     ERROR     ║       404     ║
+╚══════════════╩═══════════════╩═══════════════╝
+```
+
+## API Requests
+
+```
+http://localhost:8000/{COIN}
+```
 
 <span style="color:green"> **[GET] /** <br></span>
+> Header: HomePage
+```json
+{"CoinsAvailables":["BTC", "ETH", "BAT", "GODS"]}
+```
 <span style="color:green"> **[GET] /BTC** <br></span>
+> Show the current Information of BTC.<br>
+> Response: application/json
+
 <span style="color:green"> **[GET] /ETH** <br></span>
+> Show the current Information of ETH.<br>
+> Response: application/json
+
 <span style="color:green"> **[GET] /BAT** <br></span>
+> Show the current Information of BAT.<br>
+> Response: application/json
+
 <span style="color:green"> **[GET] /GODS** <br></span>
+> Show the current Information of GODS.<br>
+> Response: application/json
+
 
 <span style="color:green">**[OK] 200 Response**</span>
 
@@ -105,6 +145,10 @@ Options avaliable:
 	"message":"Page not Found"
 }
 ```
+
+## License
+
+This project is under the [GNU General Public License v3](LICENSE).
 
 ---
 
