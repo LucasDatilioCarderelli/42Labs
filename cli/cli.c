@@ -6,11 +6,13 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 19:37:45 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 17:06:41 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/27 11:02:07 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cli.h"
+
+static void	print_help(void);
 
 int	main(int argc, char **argv)
 {
@@ -30,8 +32,18 @@ int	main(int argc, char **argv)
 			show_log();
 		else
 		{
-			printf("Options avaliable:\n version\n endpoints\n show");
+			print_help();
 			exit(0);
 		}
 	}
+}
+
+static void	print_help(void)
+{
+	printf(" 								\n\
+Options avaliable:							\n\
+║ 											\n\
+╠══ endpoints:	List all coins supported. 	\n\
+╠══ version:	Show Mongoose Version. 		\n\
+╚══ show:	Show the log's summary. 	\n\n");
 }
