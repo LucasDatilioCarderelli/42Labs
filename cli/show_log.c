@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 17:00:22 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 23:09:06 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/27 12:21:10 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	show_log(void)
 		exit(EXIT_FAILURE);
 	}
 	count_requests(&method, fd);
-	print_cli(&method);
+	print_summary(&method);
 	exit(EXIT_SUCCESS);
 }
 
@@ -63,7 +63,7 @@ static void	count_requests(t_data *method, int fd)
 	}
 }
 
-static void	print_cli(t_data *method)
+static void	print_summary(t_data *method)
 {
 	printf("╔══════════════╦═══════════════╦═══════════════╗\n");
 	printf("║Total Requests║  HTTP Method  ║      Path     ║\n");

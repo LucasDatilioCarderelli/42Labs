@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:32:01 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 23:16:42 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/27 12:19:32 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ typedef struct s_data
 }	t_data;
 
 /**
+ * @brief In case of without or wrong argument, print a formated helper.
+ *
+ */
+static void	print_help(void);
+
+/**
  * @brief	Read the Log.log file and print the summary of API requests.
  *
  */
@@ -63,6 +69,6 @@ static void	count_requests(t_data *method, int fd);
  *
  * @param	method	Contains the count of requests.
  */
-static void	print_cli(t_data *method);
+static void	print_summary(t_data *method);
 
 #endif
