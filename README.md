@@ -28,13 +28,15 @@ Project development for <a href="https://www.42sp.org.br/"> <img src="https://gi
 ## Description
 This is a **C** project for building an **API** server that returns some infos of **Cryptocurrency** like Bitcoin, Etherium and [GODS](https://godsunchained.com/) requesting from [*Mercado Bitcoin*](https://www.mercadobitcoin.com.br/), a Brazilian exchange with a public API. To see the documentation click [**here**](https://www.mercadobitcoin.com.br/api-doc/), to see other public APIs check this [repository](https://github.com/public-apis/public-apis).
 
-## Topics
+## Table of content
 
 * [Prerequisites](#prerequisites)
 * [How to Execute](#how-to-execute)
 * [How to test the CLI](#how-to-test-the-cli)
 * [API Requests](#api-requests)
 * [License](#license)
+* [What to do next](#what-to-do-next)
+	* [Contact](#contact)
 
 ## Prerequisites
 
@@ -150,9 +152,32 @@ http://localhost:8000/{COIN}
 
 This project is under the [GNU General Public License v3](LICENSE).
 
+## What to do next
+
+* Implement automatized tests and CI/CD pipelines with Github Actions.
+* Configure a docker environment.
+* Create a Database to store the requests responses.
+* Add more functionalities for the CLI and treat the log.
+
+Reference used for this project: [link](https://melodic-walker-f2c.notion.site/42LABS-ae348f7bc8e240cf97651785cfc22467)
+
 ---
 
-**Contact:** <a href="https://github.com/LucasDatilioCarderelli" alt="login intra">
+>> thanks to:
+<a href="https://github.com/Vinicius-Santoro" alt="login intra">
+    <img src="https://img.shields.io/badge/-vnazioze-gray?style=flat&logo=42&logoColor=white" />
+</a>
+<a href="https://github.com/edubona8" alt="login intra">
+    <img src="https://img.shields.io/badge/-ebonamic-gray?style=flat&logo=42&logoColor=white" />
+</a>
+<a href="https://github.com/maykonmori" alt="login intra">
+    <img src="https://img.shields.io/badge/-mjose--ye-gray?style=flat&logo=42&logoColor=white" />
+</a>
+to support me.
+
+### Contact:
+
+<a href="https://github.com/LucasDatilioCarderelli" alt="login intra">
     <img src="https://img.shields.io/badge/-ldatilio-gray?style=flat&logo=42&logoColor=white" />
 </a>
 <a href="https://www.linkedin.com/in/lucasdatiliocarderelli/">
