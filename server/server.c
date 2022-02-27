@@ -6,15 +6,11 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:48:59 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 18:15:21 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/26 22:35:27 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
-
-static void
-change_route(struct mg_connection *c, struct mg_http_message *hm, char *route);
-static void	fn(struct mg_connection *c, int ev, void *ev_data, void *fn_data);
 
 int	main(void)
 {
@@ -22,7 +18,7 @@ int	main(void)
 
 	mg_log_set("3");
 	mg_mgr_init(&mgr);
-	mg_http_listen(&mgr, LOCAL_HOST, fn, &mgr);
+	mg_http_listen(&mgr, "http://localhost:8000/", fn, &mgr);
 	while (1)
 		mg_mgr_poll(&mgr, 2000);
 	mg_mgr_free(&mgr);

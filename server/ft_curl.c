@@ -6,14 +6,11 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 07:50:36 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 18:23:20 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/26 22:35:16 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
-
-static size_t
-write_memory_call_back(void *contents, size_t size, size_t nmemb, void *userp);
 
 char	*ft_curl(char *coin)
 {
@@ -27,9 +24,9 @@ char	*ft_curl(char *coin)
 	curl = curl_easy_init();
 	if (!curl)
 		exit(-1);
-	strcpy(s_url, API_URL);
+	strcpy(s_url, "https://www.mercadobitcoin.net/api/");
 	strcat(s_url, coin);
-	strcat(s_url, END_URL);
+	strcat(s_url, "/ticker");
 	curl_easy_setopt(curl, CURLOPT_URL, s_url);
 	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_memory_call_back);
 	curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&chunk);

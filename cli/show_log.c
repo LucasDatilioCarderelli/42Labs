@@ -6,15 +6,11 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 17:00:22 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 17:47:06 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/26 23:09:06 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cli.h"
-
-static void	init_variables(t_data *method);
-static void	count_requests(t_data *method, int fd);
-static void	print_cli(t_data *method);
 
 void	show_log(void)
 {

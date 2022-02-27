@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:32:01 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 17:07:24 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/02/26 23:16:42 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,32 @@ typedef struct s_data
 	int		error;
 }	t_data;
 
-void	show_log(void);
+/**
+ * @brief	Read the Log.log file and print the summary of API requests.
+ *
+ */
+void		show_log(void);
+
+/**
+ * @brief	Initialize the counts with 0.
+ *
+ * @param	method	Contains the count of requests.
+ */
+static void	init_variables(t_data *method);
+
+/**
+ * @brief	Counts depend on a request in each event.
+ *
+ * @param	method	Contains the count of requests.
+ * @param	fd		File Descriptor.
+ */
+static void	count_requests(t_data *method, int fd);
+
+/**
+ * @brief	Verify if exists and prints.
+ *
+ * @param	method	Contains the count of requests.
+ */
+static void	print_cli(t_data *method);
 
 #endif
