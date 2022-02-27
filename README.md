@@ -148,6 +148,20 @@ http://localhost:8000/{COIN}
 }
 ```
 
+### How to test API
+
+By using:
+
+* cURL
+```bash
+$> curl localhost:8000 | jq
+```
+> ``jq`` - Command-line JSON processor
+
+* In any browser.
+
+* [Isomnia](https://insomnia.rest/download) or other API Client.
+
 ## License
 
 This project is under the [GNU General Public License v3](LICENSE).
