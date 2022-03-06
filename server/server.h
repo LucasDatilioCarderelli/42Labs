@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 07:48:43 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/27 12:37:47 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/03/06 13:53:58 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # include "../libs/mongoose/mongoose.h"
 # include <stdio.h>
 # include <stdlib.h>
-# include <curl/curl.h>
-# include <unistd.h>
 # include <string.h>
+# include <unistd.h>
+# include <curl/curl.h>
+# include <sqlite3.h>
+# include <json-c/json.h>
 
 typedef struct s_MemoryStruct
 {
@@ -83,5 +85,8 @@ write_memory_call_back(void *contents, size_t size, size_t nmemb, void *userp);
  */
 void
 log_message(const char *filename, const char *message, int status);
+
+void
+parse_json(char *body);
 
 #endif
