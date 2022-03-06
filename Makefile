@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 11:49:02 by ldatilio          #+#    #+#              #
-#    Updated: 2022/02/27 20:20:17 by ldatilio         ###   ########.fr        #
+#    Updated: 2022/03/06 13:43:52 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RESET		=	\033[0m
 
 CC			=	gcc
 CFLAG		=	-Wall -Wextra -Werror -fsanitize=leak
-LIB			=	-lcurl
+LIB			=	-lcurl -lsqlite3 -ljson-c
 
 RM 			=	rm -f
 
@@ -34,6 +34,7 @@ SERVER_SRC	=	$(addprefix $(SERVER_DIR),	\
 				ft_curl.c 					\
 				log_message.c 				\
 				server.c 					\
+				parse_json.c 				\
 				)
 CLI_SRC		=	$(addprefix $(CLI_DIR),	\
 				cli.c 					\
