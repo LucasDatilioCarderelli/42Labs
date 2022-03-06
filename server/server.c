@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:48:59 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/02/26 22:35:27 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/03/06 13:41:03 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	change_route(
 	char	*body;
 
 	body = ft_curl(route);
+	parse_json(body);
 	mg_http_reply(c, 200, "Coin Status\r\n", "%s\n", body);
 	log_message(LOG_FILE, hm->message.ptr, 200);
 }
