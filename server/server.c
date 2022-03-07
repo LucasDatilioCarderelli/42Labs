@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:48:59 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/03/06 13:41:03 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/03/07 09:07:20 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int	main(void)
 	mg_log_set("3");
 	mg_mgr_init(&mgr);
 	mg_http_listen(&mgr, "http://localhost:8000/", fn, &mgr);
+	open_db(g_db);
 	while (1)
 		mg_mgr_poll(&mgr, 2000);
 	mg_mgr_free(&mgr);
+	sqlite3_close(g_db);
 	return (0);
 }
 
