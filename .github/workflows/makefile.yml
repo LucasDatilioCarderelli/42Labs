@@ -1,0 +1,24 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: make install
+      
+    - name: Make all
+      run: make all
+      
+    - name: Make fclean
+      run: make fclean
