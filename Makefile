@@ -6,7 +6,7 @@
 #    By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 11:49:02 by ldatilio          #+#    #+#              #
-#    Updated: 2022/03/06 13:43:52 by ldatilio         ###   ########.fr        #
+#    Updated: 2022/03/07 15:19:44 by ldatilio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ RESET		=	\033[0m
 CC			=	gcc
 CFLAG		=	-Wall -Wextra -Werror -fsanitize=leak
 LIB			=	-lcurl -lsqlite3 -ljson-c
+DEPENDENCE	=	sudo apt-get install libcurl4-gnutls-dev \
+				sqlite3 libsqlite3-dev libjson-c-dev
 
 RM 			=	rm -f
 
@@ -87,5 +89,8 @@ fclean:			clean
 				make fclean -C $(LIBS_DIR)/get_next_line
 
 re:				fclean all
+
+install:
+				$(DEPENDENCE)
 
 .PHONY: 		all, clean, fclean, re, server
