@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 07:48:43 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/03/06 13:53:58 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/03/07 09:02:22 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_MemoryStruct
 	char	*memory;
 	size_t	size;
 }	t_MemoryStruct;
+
+sqlite3	*g_db;
 
 # define LOG_FILE "./logs/LOG.log"
 
@@ -85,6 +87,9 @@ write_memory_call_back(void *contents, size_t size, size_t nmemb, void *userp);
  */
 void
 log_message(const char *filename, const char *message, int status);
+
+void
+*open_db(sqlite3 *db);
 
 void
 parse_json(char *body);
