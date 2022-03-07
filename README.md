@@ -168,9 +168,9 @@ This project is under the [GNU General Public License v3](LICENSE).
 
 ## What to do next
 
-* Implement automatized tests and CI/CD pipelines with Github Actions.
+* <s>Implement automatized tests and CI/CD pipelines with Github Actions.</s>
 * Configure a docker environment.
-* Create a Database to store the requests responses.
+* <s>Create a Database to store the requests responses.</s>
 * Add more functionalities for the CLI and treat the log.
 
 Reference used for this project: [link](https://melodic-walker-f2c.notion.site/42LABS-ae348f7bc8e240cf97651785cfc22467)
