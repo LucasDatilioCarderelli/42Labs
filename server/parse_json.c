@@ -6,7 +6,7 @@
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:40:07 by ldatilio          #+#    #+#             */
-/*   Updated: 2022/03/07 09:02:59 by ldatilio         ###   ########.fr       */
+/*   Updated: 2022/03/07 13:22:33 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	*open_db(sqlite3 *db)
 {
 	int		rc;
 
-	rc = sqlite3_open("database.db", db);
+	rc = sqlite3_open("database.db", &db);
 	if (rc)
 	{
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
